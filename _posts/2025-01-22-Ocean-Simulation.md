@@ -38,7 +38,7 @@ Lastly, you can expect to have an ocean that looks similar to what I managed to 
 	include embed/video.html 
 	src='../assets/images/ocean-blog-post/ocean-showcase.mp4' 
 	title='Ocean Showcase'
-	autoplay=true
+	autoplay=false
 	loop=true
 %}
 ### Step 1 - Generate Ocean Spectrum
@@ -457,7 +457,7 @@ After slapping on a PBR Shader, you can expect results that are similar to what 
 	include embed/video.html 
 	src='../assets/images/ocean-blog-post/ocean-showcase-no-foam.mp4' 
 	title='Ocean Showcase #2'
-	autoplay=true
+	autoplay=false
 	loop=true
 %}
 
@@ -515,7 +515,7 @@ Here are some more videos to showcase the abilities of this model:
 	include embed/video.html 
 	src='../assets/images/ocean-blog-post/agitated-ocean.mp4' 
 	title='Agitated Ocean'
-	autoplay=true
+	autoplay=false
 	loop=true
 %}
 
@@ -523,7 +523,7 @@ Here are some more videos to showcase the abilities of this model:
 	include embed/video.html 
 	src='../assets/images/ocean-blog-post/calm-ocean.mp4' 
 	title='Calm Ocean'
-	autoplay=true
+	autoplay=false
 	loop=true
 %}
 
