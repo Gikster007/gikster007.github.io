@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2025-01-22-Test.md",
+                "file": "_posts/2025-01-22-Ocean-Simulation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-01-22-Test"
+              "title": "2025-01-22-Ocean-Simulation"
             }
           }
         ]
@@ -162,29 +162,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f1dd02d668fc8923",
+  "active": "8c00a707726cdce5",
   "lastOpenFiles": [
+    "_site/assets/images/ocean-blog-post/calm-ocean.mp4",
+    "assets/images/ocean-blog-post/calm-ocean.mp4",
+    "_site/assets/images/ocean-blog-post/agitated-ocean.mp4",
+    "assets/images/ocean-blog-post/agitated-ocean.mp4",
+    "_site/assets/images/ocean-blog-post/ocean-showcase-no-foam.mp4",
+    "assets/images/ocean-blog-post/ocean-showcase-no-foam.mp4",
+    "assets/images/ocean-blog-post/displacement.png",
+    "assets/images/ocean-blog-post/slope.png",
+    "_site/assets/images/ocean-blog-post/Screenshot 2025-01-24 113136.png",
+    "_site/assets/images/ocean-blog-post/Screenshot 2025-01-24 113040.png",
+    "assets/images/ocean-blog-post/Screenshot 2025-01-24 113040.png",
+    "assets/images/ocean-blog-post/Screenshot 2025-01-24 113136.png",
+    "_site/assets/images/ocean-blog-post/displacement.png",
     "_site/assets/images/ocean-blog-post/ocean-showcase.mp4",
     "assets/images/ocean-blog-post/ocean-showcase.mp4",
     "_site/assets/images/ocean-blog-post/ocean.png",
     "assets/images/ocean-blog-post/ocean.png",
     "assets/images/ocean-blog-post/Jacco-20250124-0004.png",
-    "assets/images/ocean-blog-post/Jacco-20250124-0002.png",
     "_site/about/index.html",
     "_site/about",
     "_site/archives/index.html",
-    "_site/archives",
-    "_site/assets/images/ocean-blog-post/initial-spectrum.png",
-    "_site/assets/images/ocean-blog-post/freq-vs-time-domain.png",
-    "_site/assets/js/data/swconf.js",
-    "_site/assets/js/data/search.json",
-    "_site/assets/js/data/mathjax.js",
-    "_site/assets/js/dist/theme.min.js",
-    "_site/assets/js/dist/post.min.js",
-    "_site/assets/img/favicons/mstile-150x150.png",
-    "_site/assets/img/favicons/android-chrome-512x512.png",
-    "_site/assets/img/favicons/favicon-32x32.png",
-    "_site/assets/img/favicons/favicon-16x16.png",
-    "_posts/2025-01-22-Test.md"
+    "_posts/2025-01-22-Ocean-Simulation.md"
   ]
 }
