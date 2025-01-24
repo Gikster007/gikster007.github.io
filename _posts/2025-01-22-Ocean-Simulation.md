@@ -545,7 +545,7 @@ What if we could manipulate the ocean to incorporate more local waves? That is w
 - [Assassin's Creed III Tech Post](https://www.fxguide.com/fxfeatured/assassins-creed-iii-the-tech-behind-or-beneath-the-action/)
 ### References
 [^1]: ["Simulating Ocean Water"](https://people.computing.clemson.edu/~jtessen/reports/papers_files/coursenotes2002.pdf) by Jerry Tessendorf 
-[^2]: [Oceanographic Spectra](Oceanographic Spectrum - https://wikiwaves.org/Waves_and_the_Concept_of_a_Wave_Spectrum)
+[^2]: [Oceanographic Spectra](https://wikiwaves.org/Waves_and_the_Concept_of_a_Wave_Spectrum)
 [^3]: [Fourier Transform](https://en.wikipedia.org/wiki/Fourier_transform)
 [^4]: [Time and Frequency Domain](https://neurotext.library.stonybrook.edu/C7/C7_1/C7_1.html)
 [^5]: [JONSWAP Spectrum](https://www.codecogs.com/library/engineering/fluid_mechanics/waves/spectra/jonswap.php)
