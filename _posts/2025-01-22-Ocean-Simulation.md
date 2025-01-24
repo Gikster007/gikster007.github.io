@@ -545,7 +545,7 @@ What if we could manipulate the ocean to incorporate more local waves? That is w
 - [Assassin's Creed III Tech Post](https://www.fxguide.com/fxfeatured/assassins-creed-iii-the-tech-behind-or-beneath-the-action/)
 ### References
 [^1]: ["Simulating Ocean Water"](https://people.computing.clemson.edu/~jtessen/reports/papers_files/coursenotes2002.pdf) by Jerry Tessendorf 
-[^2]: [Oceanographic Spectra](Oceanographic Spectrum - https://www.sciencedirect.com/topics/engineering/wave-spectra)
+[^2]: [Oceanographic Spectra](Oceanographic Spectrum - https://wikiwaves.org/Waves_and_the_Concept_of_a_Wave_Spectrum)
 [^3]: [Fourier Transform](https://en.wikipedia.org/wiki/Fourier_transform)
 [^4]: [Time and Frequency Domain](https://neurotext.library.stonybrook.edu/C7/C7_1/C7_1.html)
 [^5]: [JONSWAP Spectrum](https://www.codecogs.com/library/engineering/fluid_mechanics/waves/spectra/jonswap.php)
@@ -553,7 +553,7 @@ What if we could manipulate the ocean to incorporate more local waves? That is w
 [^7]: [DFT](https://en.wikipedia.org/wiki/Discrete_Fourier_transform)
 [^8]: [FFT](https://en.wikipedia.org/wiki/Fast_Fourier_transform)
 [^9]: [Jacobian](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant)
-[^10]: ["Fast orientable aperiodic ocean synthesis using tiling and blending"](http://arnaud-schoentgen.com/publication/2024_orientable_ocean/2024_orientable_ocean.pdf) by Nicolas Lutz, Arnaud Schoentgen and Guillaume Gilet
+[^10]: ["Fast orientable aperiodic ocean synthesis using tiling and blending"](https://dl.acm.org/doi/10.1145/3675388) by Nicolas Lutz, Arnaud Schoentgen and Guillaume Gilet
 
 
 
