@@ -535,15 +535,19 @@ You may have noticed that the ocean is perfectly tileable. This can be a plus in
 
 What if we could manipulate the ocean to incorporate more local waves? That is what the folks that wrote the paper I mentioned before[^10] (with the texture synthesis method) were probably thinking. They came up with a solution that incorporates flow directionality to the waves, in combination with a Flow Map. 
 
+
+![Figure 1](../assets/images/buas-logo.png){: w="400" h="100" } 
+
 ## Bibliography
 
-### Other useful resources
+### Resources
 
 - [Acerola's Video](https://youtu.be/yPfagLeUa7k)
 - [gasgiant's implementation](https://github.com/gasgiant/FFT-Ocean/tree/main)
 - [Atlas Talk at GDC](https://gpuopen.com/gdc-presentations/2019/gdc-2019-agtd6-interactive-water-simulation-in-atlas.pdf)
 - [Assassin's Creed III Tech Post](https://www.fxguide.com/fxfeatured/assassins-creed-iii-the-tech-behind-or-beneath-the-action/)
 ### References
+
 [^1]: ["Simulating Ocean Water"](https://people.computing.clemson.edu/~jtessen/reports/papers_files/coursenotes2002.pdf) by Jerry Tessendorf 
 [^2]: [Oceanographic Spectra](https://wikiwaves.org/Waves_and_the_Concept_of_a_Wave_Spectrum)
 [^3]: [Fourier Transform](https://en.wikipedia.org/wiki/Fourier_transform)

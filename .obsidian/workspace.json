@@ -35,7 +35,8 @@
               "title": "2025-01-22-Ocean-Simulation"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -176,8 +177,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8c00a707726cdce5",
+  "active": "f4fba26d7d43ff44",
   "lastOpenFiles": [
+    "_site/assets/images/buas-logo.png",
+    "_tabs/about.md",
+    "assets/images/buas-logo.png",
+    "assets/images/buas-logo.png.crdownload",
     "_site/assets/img/favicons/mstile-150x150.png",
     "_site/assets/img/favicons/favicon.ico",
     "_site/assets/img/favicons/favicon-32x32.png",
@@ -188,18 +193,14 @@
     "_site/assets/img/favicons/site.webmanifest",
     "_site/assets/img/favicons/browserconfig.xml",
     "_posts/2025-01-22-Ocean-Simulation.md",
-    "_tabs/about.md",
     "_site/assets/images/me.jpg",
     "assets/images/me.jpg",
     "_site/assets/images/IMG-20241230-WA0002.jpg",
-    "assets/images/IMG-20241230-WA0002.jpg",
     "_site/posts/Ocean-Simulation/index.html",
     "_site/posts/Ocean-Simulation",
-    "_site/assets/images/ocean-blog-post/slope.png",
     "_site/assets/images/ocean-blog-post/ocean-showcase.mp4",
     "_site/assets/images/ocean-blog-post/ocean-showcase-no-foam.mp4",
     "_site/assets/images/ocean-blog-post/calm-ocean.mp4",
-    "_site/assets/images/ocean-blog-post/agitated-ocean.mp4",
-    "assets/images/ocean-blog-post/calm-ocean.mp4"
+    "_site/assets/images/ocean-blog-post/agitated-ocean.mp4"
   ]
 }
