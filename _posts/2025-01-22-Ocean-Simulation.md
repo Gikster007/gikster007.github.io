@@ -535,6 +535,10 @@ You may have noticed that the ocean is perfectly tileable. This can be a plus in
 
 What if we could manipulate the ocean to incorporate more local waves? That is what the folks that wrote the paper I mentioned before[^10] (with the texture synthesis method) were probably thinking. They came up with a solution that incorporates flow directionality to the waves, in combination with a Flow Map. 
 
+## Reader's Note
+
+With that, we have reached the end. In retrospect, it was a very fun, yet challenging, project to work on. Hopefully you now understand more about Ocean Rendering and how it can be achieved. I am grateful to Tessendorf for his work in the industry, and to Acerola for making amazing learning resources publicly available. I would like to thank you for reading my first ever article, and please reach out to me if you have any feedback or questions I might be able to answer, either via my socials or via the comment section at the bottom. Now go render some water!
+
 
 ![Figure 1](../assets/images/buas-logo.png){: w="400" h="100" } 
 
