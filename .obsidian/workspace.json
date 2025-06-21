@@ -35,8 +35,7 @@
               "title": "2025-01-22-Ocean-Simulation"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -55,7 +54,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -177,8 +177,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f4fba26d7d43ff44",
+  "active": "8c00a707726cdce5",
   "lastOpenFiles": [
+    "_posts/2025-01-22-Ocean-Simulation.md",
     "_site/assets/images/buas-logo.png",
     "_tabs/about.md",
     "assets/images/buas-logo.png",
@@ -192,10 +193,8 @@
     "_site/assets/img/favicons/android-chrome-192x192.png",
     "_site/assets/img/favicons/site.webmanifest",
     "_site/assets/img/favicons/browserconfig.xml",
-    "_posts/2025-01-22-Ocean-Simulation.md",
     "_site/assets/images/me.jpg",
     "assets/images/me.jpg",
-    "_site/assets/images/IMG-20241230-WA0002.jpg",
     "_site/posts/Ocean-Simulation/index.html",
     "_site/posts/Ocean-Simulation",
     "_site/assets/images/ocean-blog-post/ocean-showcase.mp4",
