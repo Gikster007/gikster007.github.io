@@ -5,8 +5,13 @@ categories:
   - Graphics
   - Water Rendering
 tags:
-  - ocean
-description: Introduction to Ocean Rendering
+  - Ocean
+  - Rendering
+  - FFT
+  - Simulation
+  - Graphics
+  - Programming
+description: Learn how to implement Jerry Tessendorf’s ocean simulation model with step-by-step explanations and code examples.
 pin: true
 math: true
 image:
