@@ -25,8 +25,3 @@ package-lock.json
 # Misc
 _sass/vendors
 assets/js/dist
-
-# Obsidian
-.obsidian/*
-.obsidian/core-plugins.json
-.obsidian/workspace.json
