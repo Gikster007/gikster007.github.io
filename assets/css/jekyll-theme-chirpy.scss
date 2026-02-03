@@ -1,0 +1,266 @@
+---
+---
+
+@import "main";
+
+/* ============================================
+   PREVENT HORIZONTAL SCROLL
+   ============================================ */
+
+#main-wrapper {
+  max-width: 100vw !important;
+  overflow-x: clip;
+}
+
+#main-wrapper .container {
+  max-width: 1600px !important;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+}
+
+/* ============================================
+   GENERAL PAGE LAYOUT
+   ============================================ */
+
+/* Center regular page content with comfortable reading width */
+main[aria-label="Main Content"] {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Override for Home and Projects pages - full width */
+#home-showcase,
+.projects-list-page {
+  max-width: 100% !important;
+}
+
+#home-showcase main[aria-label="Main Content"],
+.projects-list-page,
+body:has(#home-showcase) main[aria-label="Main Content"],
+body:has(.projects-list-page) main[aria-label="Main Content"] {
+  max-width: 100% !important;
+}
+
+/* Center tail content (including comments) */
+#tail-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* When panel exists (has col-xl-9), don't center - let Bootstrap grid handle alignment */
+#tail-wrapper.col-lg-11,
+#tail-wrapper.col-xl-9 {
+  max-width: none;
+  margin: 0;
+}
+
+/* Keep full width on Home and Projects pages */
+body:has(#home-showcase) #tail-wrapper,
+body:has(.projects-list-page) #tail-wrapper {
+  max-width: 100%;
+}
+
+/* ============================================
+   CARD GRID LAYOUT (Home & Projects)
+   ============================================ */
+
+#post-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: stretch;
+}
+
+#post-list .card-wrapper {
+  margin-bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border-bottom: 3px solid var(--link-color);
+  transition: border-bottom-color 0.3s ease;
+  position: relative;
+}
+
+/* Kill any pseudo-elements that might be causing issues */
+#post-list .card-wrapper::before,
+#post-list .card-wrapper::after,
+#post-list .post-preview::before,
+#post-list .post-preview::after,
+#post-list .card::before,
+#post-list .card::after {
+  display: none !important;
+  content: none !important;
+}
+
+#post-list .card-wrapper:hover {
+  border-bottom-color: #f59e0b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#post-list .post-preview {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100%;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+
+/* Prevent any link overlays */
+#post-list .post-preview:hover::before,
+#post-list .post-preview:hover::after {
+  display: none !important;
+}
+
+/* Fix text colors inside cards */
+#post-list .post-preview * {
+  color: inherit !important;
+}
+
+#post-list .card-title {
+  color: var(--heading-color) !important;
+}
+
+#post-list .card-text,
+#post-list .card-text p {
+  color: var(--text-color) !important;
+}
+
+#post-list .post-meta,
+#post-list .post-meta * {
+  color: var(--text-muted-color) !important;
+}
+
+#post-list .post-preview > div:first-child {
+  width: 100% !important;
+  flex: 0 0 auto !important;
+  max-width: 100% !important;
+  overflow: hidden;
+}
+
+#post-list .post-preview img {
+  width: 100%;
+  height: 280px;
+  object-fit: scale-down;
+  object-position: center top;
+  display: block;
+}
+
+#post-list .post-preview video {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+#post-list .post-preview > div:last-child {
+  width: 100% !important;
+  flex: 1 1 auto !important;
+  max-width: 100% !important;
+  display: flex;
+  flex-direction: column;
+}
+
+#post-list .card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+#post-list .card-title {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#post-list .card-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+#post-list .card-text p {
+  margin-bottom: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#post-list .post-meta {
+  font-size: 0.9rem;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Large screens: bigger cards */
+@media (min-width: 1600px) {
+  #main-wrapper .container {
+    max-width: 1800px !important;
+  }
+  
+  #post-list {
+    gap: 3rem;
+  }
+  
+  #post-list .post-preview img {
+    height: 320px;
+  }
+}
+
+/* Medium-large screens */
+@media (max-width: 1400px) {
+  #post-list .post-preview img {
+    height: 260px;
+  }
+}
+
+/* Tablets: 2 columns */
+@media (max-width: 1200px) {
+  #post-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  #post-list .post-preview img {
+    height: 240px;
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 768px) {
+  #main-wrapper .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  #post-list {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  #post-list .post-preview img {
+    height: 220px;
+  }
+  
+  main[aria-label="Main Content"] {
+    max-width: 100%;
+  }
+}

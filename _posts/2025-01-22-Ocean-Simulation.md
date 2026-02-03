@@ -17,6 +17,7 @@ math: true
 image:
   path: ../assets/images/ocean-blog-post/ocean.png
   alt: Tessendorf Ocean
+featured: true
 ---
 ## Introduction
 

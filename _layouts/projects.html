@@ -1,0 +1,71 @@
+---
+layout: page
+---
+
+<div class="projects-list-page">
+  {{ content }}
+
+  <div id="post-list" class="flex-grow-1 px-xl-1">
+    {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+    
+    {% for project in sorted_projects %}
+    <article class="card-wrapper">
+      <a href="{{ project.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
+        {% assign card_body_col = '12' %}
+        
+        {% if project.video %}
+        <div class="col-md-5">
+          <div class="preview-img">
+            <video autoplay loop muted playsinline>
+              <source src="{{ project.video | relative_url }}" type="video/mp4">
+              {% if project.image %}
+              <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+              {% endif %}
+            </video>
+          </div>
+        </div>
+        {% elsif project.image %}
+        <div class="col-md-5">
+          <div class="preview-img">
+            <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+          </div>
+        </div>
+        {% endif %}
+        
+        <div class="col-md-{{ card_body_col }}">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">{{ project.title }}</h1>
+            
+            <div class="card-text content mt-0 mb-3">
+              <p>{{ project.description }}</p>
+            </div>
+            
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- Date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <time>{{ project.date | date: "%b %d, %Y" }}</time>
+                
+                <!-- Main Category -->
+                {% if project.main_category %}
+                <i class="far fa-folder-open fa-fw me-1 ms-2"></i>
+                <span class="categories">{{ project.main_category }}</span>
+                {% endif %}
+                
+                <!-- Tags -->
+                {% if project.tags %}
+                <span class="categories">
+                  {% for tag in project.tags limit:3 %}
+                    , {{ tag }}
+                  {% endfor %}
+                </span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </article>
+    {% endfor %}
+  </div>
+</div>

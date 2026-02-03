@@ -1,7 +1,7 @@
 ---
 title: Projects
-layout: page
+layout: projects
 permalink: /projects/
 order: 1
-icon: fas fa-stream
+icon: fas fa-laptop-code
 ---

@@ -1,0 +1,276 @@
+---
+layout: default
+---
+
+{% include lang.html %}
+
+<div id="home-showcase">
+  
+  <!-- Featured Projects Section -->
+  {% assign featured_projects = site.projects | where: 'featured', true | sort: 'date' | reverse %}
+  
+  {% if featured_projects.size > 0 %}
+  <section class="showcase-section">
+    <div class="section-header">
+      <h2 class="section-title">Featured Projects</h2>
+      <a href="{{ '/projects/' | relative_url }}" class="view-all">
+        View all projects <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+    
+    <div id="post-list" class="flex-grow-1 px-xl-1">
+      {% for project in featured_projects limit: 3 %}
+      <article class="card-wrapper">
+        <a href="{{ project.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
+          {% assign card_body_col = '12' %}
+          
+          {% if project.video %}
+          <div class="col-md-5">
+            <video autoplay loop muted playsinline>
+              <source src="{{ project.video | relative_url }}" type="video/mp4">
+              {% if project.image %}
+              <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+              {% endif %}
+            </video>
+          </div>
+          {% elsif project.image %}
+          <div class="col-md-5">
+            <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+          </div>
+          {% endif %}
+          
+          <div class="col-md-{{ card_body_col }}">
+            <div class="card-body d-flex flex-column">
+              <h1 class="card-title my-2 mt-md-0">{{ project.title }}</h1>
+              
+              <div class="card-text content mt-0 mb-3">
+                <p>{{ project.description }}</p>
+              </div>
+              
+              <div class="post-meta flex-grow-1 d-flex align-items-end">
+                <div class="me-auto">
+                  <!-- Date -->
+                  <i class="far fa-calendar fa-fw me-1"></i>
+                  <time>{{ project.date | date: "%b %d, %Y" }}</time>
+                  
+                  <!-- Category -->
+                  {% if project.main_category %}
+                  <i class="far fa-folder-open fa-fw me-1 ms-2"></i>
+                  <span class="categories">{{ project.main_category }}</span>
+                  {% endif %}
+                </div>
+                
+                <!-- Featured badge -->
+                <div class="pin ms-1">
+                  <i class="fas fa-star fa-fw"></i>
+                  <span>Featured</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+  
+  <!-- Featured Blog Posts Section -->
+  {% assign featured_posts = site.posts | where: 'featured', true | sort: 'date' | reverse %}
+  
+  {% if featured_posts.size > 0 %}
+  <section class="showcase-section">
+    <div class="section-header">
+      <h2 class="section-title">Featured Articles</h2>
+      <a href="{{ '/archives/' | relative_url }}" class="view-all">
+        View all posts <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+    
+    <div id="post-list" class="flex-grow-1 px-xl-1">
+      {% for post in featured_posts limit: 3 %}
+      <article class="card-wrapper">
+        <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
+          {% assign card_body_col = '12' %}
+          
+          {% if post.image %}
+            {% assign src = post.image.path | default: post.image %}
+            {% if post.media_subpath %}
+              {% unless src contains '://' %}
+                {% assign src = post.media_subpath | append: '/' | append: src | replace: '///', '/' | replace: '//', '/' %}
+              {% endunless %}
+            {% endif %}
+            {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
+            
+            <div class="col-md-5">
+              <img src="{{ src }}" alt="{{ alt }}">
+            </div>
+            {% assign card_body_col = '7' %}
+          {% endif %}
+          
+          <div class="col-md-{{ card_body_col }}">
+            <div class="card-body d-flex flex-column">
+              <h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
+              
+              <div class="card-text content mt-0 mb-3">
+                <p>{% include post-summary.html %}</p>
+              </div>
+              
+              <div class="post-meta flex-grow-1 d-flex align-items-end">
+                <div class="me-auto">
+                  <!-- Date -->
+                  <i class="far fa-calendar fa-fw me-1"></i>
+                  {% include datetime.html date=post.date lang=lang %}
+                  
+                  <!-- Categories -->
+                  {% if post.categories.size > 0 %}
+                  <i class="far fa-folder-open fa-fw me-1 ms-2"></i>
+                  <span class="categories">
+                    {% for category in post.categories %}
+                      {{ category }}{%- unless forloop.last -%}, {%- endunless -%}
+                    {% endfor %}
+                  </span>
+                  {% endif %}
+                </div>
+                
+                <!-- Featured badge -->
+                <div class="pin ms-1">
+                  <i class="fas fa-star fa-fw"></i>
+                  <span>Featured</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+  
+  <!-- Fallback: If no featured content, show recent posts -->
+  {% if featured_projects.size == 0 and featured_posts.size == 0 %}
+  <section class="showcase-section">
+    <div class="section-header">
+      <h2 class="section-title">Recent Posts</h2>
+    </div>
+    
+    <div id="post-list" class="flex-grow-1 px-xl-1">
+      {% assign recent_posts = site.posts | where_exp: 'item', 'item.hidden != true' | sort: 'date' | reverse %}
+      {% for post in recent_posts limit: 5 %}
+      <article class="card-wrapper">
+        <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
+          {% assign card_body_col = '12' %}
+          
+          {% if post.image %}
+            {% assign src = post.image.path | default: post.image %}
+            {% if post.media_subpath %}
+              {% unless src contains '://' %}
+                {% assign src = post.media_subpath | append: '/' | append: src | replace: '///', '/' | replace: '//', '/' %}
+              {% endunless %}
+            {% endif %}
+            {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
+            
+            <div class="col-md-5">
+              <img src="{{ src }}" alt="{{ alt }}">
+            </div>
+            {% assign card_body_col = '7' %}
+          {% endif %}
+          
+          <div class="col-md-{{ card_body_col }}">
+            <div class="card-body d-flex flex-column">
+              <h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
+              
+              <div class="card-text content mt-0 mb-3">
+                <p>{% include post-summary.html %}</p>
+              </div>
+              
+              <div class="post-meta flex-grow-1 d-flex align-items-end">
+                <div class="me-auto">
+                  <i class="far fa-calendar fa-fw me-1"></i>
+                  {% include datetime.html date=post.date lang=lang %}
+                  
+                  {% if post.categories.size > 0 %}
+                  <i class="far fa-folder-open fa-fw me-1 ms-2"></i>
+                  <span class="categories">
+                    {% for category in post.categories %}
+                      {{ category }}{%- unless forloop.last -%}, {%- endunless -%}
+                    {% endfor %}
+                  </span>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+  
+</div>
+
+<style>
+  /* Showcase Sections */
+.showcase-section {
+  margin-bottom: 4rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--card-border-color);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--heading-color);
+  font-family: inherit;
+}
+
+.view-all {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--link-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.view-all:hover {
+  color: var(--link-hover-color);
+  gap: 0.75rem;
+}
+
+.view-all i {
+  transition: transform 0.2s ease;
+}
+
+.view-all:hover i {
+  transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+</style>
