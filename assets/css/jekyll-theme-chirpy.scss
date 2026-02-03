@@ -1,25 +1,12 @@
 ---
 ---
 
-@use "main";
-
-/* ============================================
-   MISSING CHIRPY BASE STYLES
-   ============================================ */
-
-#sidebar #avatar {
-  border-radius: 50%;
-}
-
-#sidebar ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-#sidebar .sidebar-bottom {
-  display: flex;
-  flex-wrap: wrap;
-}
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
 
 /* ============================================
    PREVENT HORIZONTAL SCROLL
