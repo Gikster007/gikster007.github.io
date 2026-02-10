@@ -211,6 +211,13 @@ body:has(.projects-list-page) #tail-wrapper {
   padding-top: 1rem;
 }
 
+#sidebar #avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* ============================================
    RESPONSIVE DESIGN
    ============================================ */
@@ -267,5 +274,172 @@ body:has(.projects-list-page) #tail-wrapper {
   
   main[aria-label="Main Content"] {
     max-width: 100%;
+  }
+}
+
+/* ============================================
+   PROJECT CARD STYLES
+   ============================================ */
+
+/* Completely disable link color behavior on cards */
+#post-list .card-wrapper .post-preview {
+  color: unset !important;
+}
+
+#post-list .card-wrapper .post-preview:hover,
+#post-list .card-wrapper .post-preview:active,
+#post-list .card-wrapper .post-preview:focus,
+#post-list .card-wrapper .post-preview:visited {
+  color: unset !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* Set colors explicitly - these won't change on hover */
+#post-list .card-title,
+#post-list .card-wrapper:hover .card-title {
+  color: var(--heading-color) !important;
+}
+
+#post-list .card-text,
+#post-list .card-text p,
+#post-list .card-wrapper:hover .card-text,
+#post-list .card-wrapper:hover .card-text p {
+  color: var(--text-color) !important;
+}
+
+#post-list .detail-label,
+#post-list .card-wrapper:hover .detail-label {
+  color: var(--heading-color) !important;
+  font-weight: 600;
+}
+
+#post-list .detail-value,
+#post-list .card-wrapper:hover .detail-value {
+  color: var(--text-muted-color) !important;
+}
+
+#post-list .post-meta,
+#post-list .post-meta *,
+#post-list .card-wrapper:hover .post-meta,
+#post-list .card-wrapper:hover .post-meta * {
+  color: var(--text-muted-color) !important;
+}
+
+#post-list .badge-complete,
+#post-list .card-wrapper:hover .badge-complete {
+  color: #10b981 !important;
+}
+
+#post-list .badge-wip,
+#post-list .card-wrapper:hover .badge-wip {
+  color: #f59e0b !important;
+}
+
+/* Remove any underlines/borders that appear on hover */
+#post-list .card-wrapper .post-preview *,
+#post-list .card-wrapper:hover .post-preview * {
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+/* Keep only the card's bottom border hover effect */
+#post-list .card-wrapper:hover {
+  border-bottom: 3px solid #f59e0b !important;
+}
+
+/* Title row with status badge */
+.project-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.project-title-row .card-title {
+  margin-bottom: 0 !important;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+
+.badge-complete {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #10b981 !important;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-wip {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #f59e0b !important;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* Project Details - Label/Value Layout */
+.project-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.detail-label {
+  flex-shrink: 0;
+  width: 100px;
+}
+
+.detail-value {
+  flex: 1;
+}
+
+/* Dark mode adjustments */
+html[data-mode="dark"] {
+  .badge-complete {
+    background-color: rgba(16, 185, 129, 0.2);
+  }
+  
+  .badge-wip {
+    background-color: rgba(245, 158, 11, 0.2);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .detail-row {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  
+  .detail-label {
+    width: auto;
+    font-size: 0.8rem;
+  }
+  
+  .detail-value {
+    font-size: 0.85rem;
+  }
+  
+  .project-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
 }

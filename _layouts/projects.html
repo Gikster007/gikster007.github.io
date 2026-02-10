@@ -34,34 +34,80 @@ layout: page
         
         <div class="col-md-{{ card_body_col }}">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">{{ project.title }}</h1>
+            
+            <!-- Title Row with Status Badge -->
+            <div class="project-title-row">
+              <h1 class="card-title my-2 mt-md-0">{{ project.title }}</h1>
+              {% if project.status == 'complete' %}
+                <span class="status-badge badge-complete">Complete</span>
+              {% elsif project.status == 'wip' %}
+                <span class="status-badge badge-wip">In Progress</span>
+              {% endif %}
+            </div>
             
             <div class="card-text content mt-0 mb-3">
               <p>{{ project.description }}</p>
             </div>
-            
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
+
+            <!-- Project Details Table -->
+            <div class="project-details">
+              
+              {% if project.contributions %}
+              <div class="detail-row">
+                <span class="detail-label">Contributions</span>
+                <span class="detail-value">{{ project.contributions }}</span>
+              </div>
+              {% endif %}
+              
+              {% if project.features %}
+              <div class="detail-row">
+                <span class="detail-label">Features</span>
+                <span class="detail-value">{{ project.features }}</span>
+              </div>
+              {% endif %}
+              
+              {% if project.duration %}
+              <div class="detail-row">
+                <span class="detail-label">Duration</span>
+                <span class="detail-value">{{ project.duration }}</span>
+              </div>
+              {% endif %}
+              
+              {% if project.team_size %}
+              <div class="detail-row">
+                <span class="detail-label">Team Size</span>
+                <span class="detail-value">{{ project.team_size }} members</span>
+              </div>
+              {% endif %}
+              
+              {% if project.platforms %}
+              <div class="detail-row">
+                <span class="detail-label">Platform</span>
+                <span class="detail-value">{{ project.platforms | join: " - " }}</span>
+              </div>
+              {% endif %}
+              
+              {% if project.tags %}
+              <div class="detail-row">
+                <span class="detail-label">Tech Stack</span>
+                <span class="detail-value">{{ project.tags | join: " - " }}</span>
+              </div>
+              {% endif %}
+              
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end mt-auto pt-3">
               <div class="me-auto">
-                <!-- Date -->
                 <i class="far fa-calendar fa-fw me-1"></i>
-                <time>{{ project.date | date: "%b %d, %Y" }}</time>
+                <time>{{ project.date | date: "%b %Y" }}</time>
                 
-                <!-- Main Category -->
                 {% if project.main_category %}
-                <i class="far fa-folder-open fa-fw me-1 ms-2"></i>
-                <span class="categories">{{ project.main_category }}</span>
-                {% endif %}
-                
-                <!-- Tags -->
-                {% if project.tags %}
-                <span class="categories">
-                  {% for tag in project.tags limit:3 %}
-                    , {{ tag }}
-                  {% endfor %}
-                </span>
+                <i class="far fa-folder-open fa-fw me-1 ms-3"></i>
+                <span>{{ project.main_category }}</span>
                 {% endif %}
               </div>
             </div>
+
           </div>
         </div>
       </a>
