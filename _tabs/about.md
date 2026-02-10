@@ -12,4 +12,4 @@ My name is George and I am a 20 Year Old student at Breda University of Applied 
 
 ## What is this website about?
 
-This is my portfolio! Here, you can expect see cool projects that I worked on and Blog Posts on cool techniques/findings I've came across. Any feedback you may have is greatly appreciated! Feel free to reach out to me on my socials for any questions, feedback, or if you just wanna chat :)
+This is my portfolio! Here, you can expect to see cool projects that I worked on and Blog Posts on interesting techniques/findings I've came across. Any feedback you may have is greatly appreciated! Feel free to reach out to me on my socials for any questions, feedback, or if you just wanna chat :)
